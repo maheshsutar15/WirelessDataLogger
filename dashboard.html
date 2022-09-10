@@ -1,0 +1,2791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atechno Embedded Solutions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+        
+
+<!--    Dashboard Link -->
+        
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/dist/css/bootstrap.css?t=20210417" rel="stylesheet">
+
+    
+        
+        <link href="logo.76d0f203.png" rel="icon">
+        
+
+        <style>
+            * {box-sizing: border-box;}
+            body {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgb(0 0 0 / 86%);
+            }
+    
+            .topnav {
+                overflow: hidden;
+                background-color: #c1bbbb;
+                position: fixed;
+                width: 100%;
+                
+               
+            }
+    
+            .topnav h4 {
+                float: left;
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 20px;
+            }
+
+            .topnav h4.active {
+                background-color: #2196F3;
+                color: white;
+            }
+    
+            .topnav .login-container {
+                float: right;
+            }
+    
+           
+    
+            .topnav .login-container button {
+                float: right;
+                padding: 6px 10px;
+                margin-right: 16px;
+                background-color: rgb(234, 37, 37);
+                color: white;
+                font-size: 17px;
+                border: none;
+                cursor: pointer;
+                margin-top: -35px;
+            }
+    
+            .topnav .login-container button:hover {
+                background-color: green;
+            }
+
+
+            /*  left side nav bar  */
+            .sidebar {
+                margin: 0;
+                margin-top: 78px;
+                width: 210px;
+                height: 100%;
+                background-color: rgb(14, 88, 168);
+                position: fixed;
+                height: 100%;
+                overflow: auto;
+            }
+
+            .sidebar a {
+                display: block;
+                font-size: 15px;
+                color: rgb(255, 255, 255);
+                padding: 12px;
+                text-decoration: none;
+            }
+ 
+            .sidebar a.active {
+                background-color: #040caa;
+                color: white;
+            }
+
+            .sidebar a:hover:not(.active) {
+                background-color: rgb(171, 19, 222);
+                color: white;
+            }
+
+           
+
+            @media screen and (max-width: 700px) {
+                .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .sidebar a {float: left;}
+            div.content {margin-left: 0;}
+        }
+
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+ 
+    
+            
+    
+        </style>
+
+
+
+
+<style>
+
+    
+        
+/* The popup form - hidden by default */
+label{
+    color: #ffffff;
+}
+.form-popup{
+    background: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0%;
+    justify-content: center;
+ 
+
+}
+
+/* Add styles to the form container */
+.form-container {
+    background: rgb(255, 255, 255);
+    height: auto;
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 15px;
+    margin-left: 35%;
+    
+}
+.form-container label{
+  color: black;
+}
+/* .form-popup  ::after{
+transition: 10s;
+color: #04AA6D;
+} */
+
+/* Full-width input fields */
+.form-container input[type=text] {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0 15px 0;
+  border: none;
+  border-radius: 5px;
+  background: #f1f1f1;
+  
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #00d184;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: rgb(255, 0, 0);
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+        /* End Of POP window Code  */
+
+
+
+        .close {
+  font-size: 45px;
+  font-weight: 600;
+  display: inline-block;
+  transform: rotate(45deg);
+}
+
+    
+            
+    
+        </style>
+
+
+
+
+
+<!-- Card Style CSS-->
+
+</style>
+
+
+
+</head>
+<body>
+
+    <div class="topnav">
+        <h4 style="padding-left:50px;"><img src="logo.76d0f203.png" alt="" style="width: 30px; height: 30px;">  - ATechno Embedded Solutions<h5 style="padding-top: 20px; color: rgb(0, 0, 0);">Wireless Data Logger</h5></h4>
+    
+        
+        <div class="login-container">
+          <form >
+            
+            <button type="submit" style="margin-bottom:-35%;" onclick="check(this.form)">Logout</button>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="sidebar">
+        <a class="active" href="dash1.html">Dashboard</a>
+        <a href="Temparature.html">Temperature</a>
+        <a href="pressure.html">Pressure</a>
+        <a href="vacuum.html">Vacuum</a>
+        <a href="Battery.html">Battery</a>
+        <a href="">CO2</a>
+        <a href="">Conductivity</a>
+        <a href="">steam penetration</a>
+        <a href="">Records</a>
+        <a href=""></a>
+        
+      </div>
+
+
+      
+      <div style="padding-left:6.5%; padding-right:10%; padding-top: 5.5%; margin-left: 10%;"><br>
+        <p style="border:10px solid #0a63a0; background-color: #0a63a0; color: azure; box-shadow: 10px 10px 5px lightblue; width: 110%; height: 45px; font-size: large;"> Home / Dashboard</p> 
+        <br>
+        <div style="">
+          <button style="margin-left:30px; height: 40px; width: 100px; font-size: 12px; font-weight: bolder;" class="open-button" onclick="openForm()">
+            <i class="fas fa-plus"></i> Add Node
+          </button>
+
+              <button style="margin-left:30px; height: 40px; font-size: 12px; font-weight: bolder;" class="open-button" onclick="openForm1()">
+                <i class="fas fa-chart-line"></i> See Trend
+              </button>
+              
+              <button style="margin-left:30px; height: 40px; font-size: 12px; font-weight: bolder;" class="open-button" onclick="openForm2()">
+                <i class="fas fa-file"></i> Report
+              </button>
+
+              
+            <button style="margin-left:30px; width: 100px; height: 40px; font-size: 12px; font-weight: bolder;" id="glance1" class="open-button" onclick="chech()">
+              <i class="fas fa-file"></i> Glance
+            </button>        
+              
+              <input type="checkbox" style="" class="hidden-checkbox" id="hidden-checkbox1" onClick="javascript:uncheckShowYear(this);"/>
+  <!--  -->
+            </div>
+
+            <style>
+              @keyframes slide {
+                0%{
+                  background-position-x: 0%;
+                }
+                100%{
+                  background-position-x: 600vw;
+                }
+              }
+            </style>
+<script language="javascript" type="text/javascript">
+  function uncheckShowYear(obj)
+          {
+              if (obj.checked == true)
+              {
+                  document.getElementById("hidden-checkbox").checked = true;
+                  document.getElementById('glance1').style.background = "repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, rgb(0,255,0) 14.28%, rgb(0,255,255) 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%)";
+                  document.getElementById('glance1').style.textShadow = "0 0 3px #FF0000, 0 0 5px #0000FF";
+                  
+                  var el = document.getElementById('glance1');
+                  el.style.backgroundSize = "20vw 20vw"
+                  el.style.color = "white"
+                  el.style.animation = "slide 1010s linear infinite forwards";
+              }
+              if (obj.checked == false)
+              {
+                  document.getElementById("hidden-checkbox").checked = false;
+                  document.getElementById('glance1').style.background = "rgb(235, 236, 236)";
+                  document.getElementById('glance1').style.color = "Black";
+                  document.getElementById('glance1').style.textShadow = "0 0 0";
+              }
+              R1()
+              R2()
+              
+              
+          }
+
+          function chech(){
+        var checkbox2 = document.getElementById('hidden-checkbox1');
+        if(checkbox2.checked){
+            checkbox2.checked = false;
+        }
+        else{
+            checkbox2.checked = true;
+        }
+
+        
+    }
+
+
+  </script>
+      
+    
+            
+    
+    
+            <!--   POP Up Window Code  -->
+            <!-- Add Node -->
+            <div class="form-popup" id="myForm" style="display:none; position:fixed;">
+                <form  class="form-container" >
+                  <h2 style="text-align:center; padding: -10px; color: rgb(0, 0, 0);">Add Node</h2>
+              
+                  <div>
+                    <span class="close" id="" onclick="closeForm()">+</span>
+                  </div>
+
+                  <label type="email"><b>UID:</b></label>
+                  <input type="text" id="UID"  />
+                  
+              
+                  <label for="psw"><b>Location</b></label>
+                  <input type="text" id="Location" />
+                  
+                  <label for="psw"><b>Sublocation</b></label>
+                  <input type="text" id="Sublocation" />
+    
+                  <label for="psw"><b>Machine</b></label>
+                  <input type="text" id="Machine" />
+                  
+                  <label for="psw"><b>CO2</b></label>
+                  <input type="text" id="Co2" />
+                  
+                  <label for="psw"><b>Temparature Range</b></label>
+                  <input type="text" id="Temparature" />
+                  
+                
+                  <input type="button" class="btn" name="button" id="btn" value="Add" onclick="checkinput1()">
+            
+                </form>
+              </div>
+              <style>
+                #btn{
+                  display: flex;
+                }
+              </style>
+   
+              <script> 
+                function onFormSubmit(){
+                  testVariable()
+                  display()
+                }
+              </script>
+    
+    
+    
+    
+              <script language="javascript">
+                function someFunc() {
+                  closeForm();
+                  testVariable();
+                }
+              </script>
+              
+    
+    
+              <!-- See Trend -->
+              <div class="form-popup" id="myForm1" style="display:none;">
+                <form  class="form-container">
+                    <h2 style="text-align:center; padding: -10px;">Modify Node</h2>
+                    <button type="button" class="btn cancel" onclick="closeForm1()">Close</button>
+                </form>
+            </div>
+    
+            <!-- Report -->
+            <div class="form-popup" id="myForm2" style="display:none;">
+                <form  class="form-container">
+                    <h2 style="text-align:center; padding: -10px;">Modify Node</h2>
+                    
+                    <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
+                </form>
+            </div>
+    
+           
+            
+            
+    
+    
+    
+    
+    
+        <hr style=" height: 4px; background-color: rgb(225, 0, 255); width: 110%;">
+    
+    
+    
+        <div >
+            <!-- Faulty and Healthy Window  -->
+
+            
+            <div id="output" style="" class="m1">
+              <main class="main1" id="main1">
+                <section class="sky">
+                  <div class="cloud-1"></div>
+                  <div class="cloud-2"></div>
+                  <div class="cloud-3"></div>
+                  <div class="sun" > 
+                    <div class="Circle3"></div>
+                  <div class="Circle2"></div>
+                  <div class="Circle1"></div>
+                </div>
+                </section>
+                <section class="content1">
+                  
+                  <h1 class="A1 o2-value" id="op1">29&deg;</h1>
+                  <h3 id="op2" >UID : 1</h3>
+        
+                  <div class="details">
+                    <div>
+                      <p class="value" id="op3">19&deg;</p>
+                      <p class="label1">Temperature</p>
+                    </div>
+                    <div>
+                      <p class="value" id="op4">29&deg;</p>
+                      <p class="label1">Humidity</p>
+                    </div>
+                    <div>
+                      <p class="value" id="op5">19%</p>
+                      <p class="label1">Pressure</p>
+                    </div>
+                    <div>
+                      <p class="value" id="op6">22%</p>
+                      <p class="label1">Battery</p>
+                    </div>
+                  </div>
+                </section>
+              </main>
+        
+              
+
+            </div>
+            
+            <Style>
+              .m1{
+                  display:none;
+              }
+              .m2{
+                margin-left: 115px; 
+                margin-top:-25px;
+              }
+              .m1 label{
+                font-weight: bolder;
+                font-size: 16px;
+                color: white;
+              }
+              .m1 p{
+                
+                color: #ffffff;
+              }
+          </Style>
+
+
+
+
+
+<div class="content">
+            
+    
+  <div class="main-buttons" style="margin-top: 2%;">
+    <script language="javascript">
+      function Glancee(){
+        document.getElementById("mains").style.marginLeft = "20px";
+        document.getElementById("main1").style.width = "220px";
+        document.getElementById("main1").style.margin = "5px";
+        document.getElementById("main1").style.height = "80px";
+        
+        document.getElementById("main1").style.display = "none";
+        
+
+      } 
+      </script>
+
+      <style>
+        #hidden-checkbox:checked ~ .sidebar{
+          margin-left: -300px;
+
+
+        }
+      #hidden-checkbox:checked ~ .main1{
+        padding-left: -30px;
+        width: 201.5px;
+        height: 80px;
+        margin: 5px;
+        border-radius: 10px;
+         box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.973);
+        position:inherit;  
+       
+      }
+
+      #hidden-checkbox:checked ~ .main1 section{
+        margin: 0px;
+        display:table-cell;
+        border-end-end-radius:initial;
+        margin-top: 50px;
+      }
+
+
+      #hidden-checkbox:checked ~ .main1 section .sun{
+        margin-left: 175px !important;
+        margin-top: -15px !important;
+        border-radius: 50% !important;
+        height: 94px;
+        width: 90px;
+        margin: -10px;
+        position: sticky;
+        background: transparent;
+      }
+
+
+      @keyframes enlarge{
+    50%{
+        transform: scale(0.9);
+    }
+}
+
+#hidden-checkbox:checked ~ .main1 section .sun .Circle1{
+    z-index: 100;
+    position: inherit;
+    height: 80px;
+    width: 80px;
+    right: -20px;
+    margin-top: 0px;
+    top: -30px;
+    margin-top: -100px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    animation: enlarge;
+    animation-duration: 5s;
+    
+    margin-left: -6px;
+
+    animation-iteration-count: infinite;
+}
+
+#hidden-checkbox:checked ~ .main1 section .sun .Circle2{
+    z-index: 80;
+    position: inherit;
+    height: 150px;
+    width: 150px;
+    right: -50px;
+    margin-top: -270px;
+    margin-left: -33px;
+    top: -70px;
+    border-radius: 50%;
+    background-color: rgb(175 154 134);
+    
+    animation: enlarge;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+
+#hidden-checkbox:checked ~ .main1 section .sun .Circle3{
+    z-index: 50;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    right: -50px;
+    margin-top: 6px;
+    margin-left: -118px;
+    top: -100px;
+    border-radius: 50%;
+    background-color: rgb(169 147 132 / 41%);
+    
+    animation: enlarge;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+
+
+      #hidden-checkbox:checked ~ .main1 section .cloud-1{
+        display: none;
+      }
+      #hidden-checkbox:checked ~ .main1 section .cloud-2{
+        display: none;
+      }
+      #hidden-checkbox:checked ~ .main1 section .cloud-3{
+        display: none;
+      }
+      #hidden-checkbox:checked ~ .main1 section h1{
+        font-size: 51px;
+    margin: 30px;
+    
+    padding-bottom: -126px;
+    margin-right: 115px;
+    font-weight: 500;
+    margin-top: -52px !important;
+    
+    margin-right: 267px !important;
+    margin-left: -283px;
+
+
+        
+      }
+      #hidden-checkbox:checked ~ .main1 section h3{  
+        margin-top: -113px !important;
+    margin-left: -553px;
+      }
+
+      #hidden-checkbox:checked ~ .content1{
+        display: block;
+
+      }
+
+      #hidden-checkbox:checked ~ .sky{
+        display: none;
+        margin-top: -100px;
+
+      }
+
+      #hidden-checkbox:checked ~ .cloud-1, #hidden-checkbox:checked ~ .cloud-2, #hidden-checkbox:checked ~ .cloud-3{
+       padding-top: 20%;
+      }
+
+
+
+      #hidden-checkbox:checked ~ .label1{
+        font-size: 7px;
+      }
+
+      #hidden-checkbox:checked ~ .sky{
+        border-radius: 15px;
+      }
+
+      #hidden-checkbox:checked ~ .cloud-1, #hidden-checkbox:checked ~ .cloud-2, #hidden-checkbox:checked ~ .cloud-3{
+        width: 50%;
+        height: 50px;
+      }
+
+      #hidden-checkbox:checked ~ .sun{
+        width: 40px;
+        height: 40px;
+      }
+
+      #hidden-checkbox:checked ~ .content1 h1{
+        font-size: 50px;
+        font-weight: 400;
+        position: absolute;
+        js:its();
+      }
+
+      #hidden-checkbox:checked ~ .content1 h3{
+        font-size: 15px;
+        display: none;
+        margin-top: 10px;
+      }
+
+      #hidden-checkbox:checked ~ .value{
+        font-size: 25px;
+      }
+
+      #hidden-checkbox:checked ~ .label1{
+        font-size: 7px;
+      }
+#hidden-checkbox:checked ~ .main1 #image-circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border-top: 4px dashed #ffcc00;
+        border-right: 4px dashed #ffcc00;
+        border-left: 4px dashed #000000;
+        border-bottom: 4px dashed #000000;
+        padding: 10px;
+        animation: spin 10s infinite linear;
+
+       
+}
+#hidden-checkbox:checked ~ #image-circle{
+   @keyframes spin {
+        100% {
+            transform: rotate(1turn);
+        }
+      }
+    }
+
+    #hidden-checkbox:checked ~ .sidebar{
+      width: 162px;
+    }
+     
+
+
+
+
+
+
+
+
+        #hidden-checkbox{
+          margin-top: -95.6px;
+          float: right;
+          margin-right: -3%;
+          width: 39px;
+          height: 39px;
+          display: none;
+        }
+
+        #hidden-checkbox1{
+          display: block;
+    margin-top: -40px;
+    margin-left: 43.5%;
+    width: 40px;
+    height: 39.9px;
+        }
+
+
+
+.mains{
+display: flex;
+flex-wrap: wrap; /*<!-- this is command line which force card to see in one line-->*/
+padding: 0px;
+margin-left: 0%;
+width: 114%;
+
+
+}
+
+.main1{
+height: 350px;
+width: 260px;
+margin: 10px;
+border-radius: 24px;
+overflow: hidden;
+background: linear-gradient(#23e138, #325c17, rgb(5 212 29));
+box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.973);
+/* display: flex; */
+}
+
+
+
+.sky{
+position:inherit;
+top: 0;
+
+width: 100%;
+}
+
+.sky > div{
+margin: 0 auto;
+border-radius: 24px;
+
+}
+
+.cloud-1{
+width: 100%;
+height: 50px;
+background:  #a3efff;
+display: block;
+}
+
+.cloud-2{
+width: 75%;
+height: 50px;
+background: white;
+margin-top: -30px !important;
+display: block;
+box-shadow: #101113;
+}
+
+.cloud-3{
+width: 60%;
+height: 35px;
+background:  #D0F4FC;
+margin-top: -15px !important;
+display: block;
+}
+
+.sun{
+width: 80px;
+height: 80px;
+background: #FCE765;
+border-radius: 50% !important;
+margin-top: -60px !important;
+position: inherit;
+}
+
+.content1{
+margin-top: 0px;
+text-align: center;
+color: white;
+
+}
+
+.content1 > h1{
+  margin-top: -10px;
+font-size: 65px;
+margin-left: 20px;
+font-weight:600;
+}
+
+.content1 > h3{
+margin-top: -7%;
+font-size: 24px;
+display: block;
+}
+
+.details{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+margin-top: -15px;
+row-gap: 8px;
+}
+
+.value{
+font-size: 36px;
+margin: 1%;
+}
+
+.label1{
+font-size: 14px;
+margin: 0px;
+margin-left: -9px;
+}
+
+
+
+
+
+
+        /* Moving Circle in Cards */
+        #image-circle {
+        width: 80px;
+        height: 80px;
+        display: none;
+        border-radius: 50%;
+        border-top: 4px dashed #ffcc00;
+        border-right: 4px dashed #ffcc00;
+        border-left: 4px dashed #ffcc00;
+        border-bottom: 4px dashed #ffcc00;
+        padding: 10px;
+        animation: spin 10s infinite linear;
+        position: inherit;
+    }
+    
+
+
+    @keyframes spin {
+        100% {
+            transform: rotate(1turn);
+        }
+    }
+
+    /* End of code of moving circle */
+
+      </style>
+
+
+<script lang="javascript">
+  function its(){
+    document.getElementById("#hidden-checkbox:checked ~ .content1 > h1").style.fontSize = "50px";
+  document.getElementById("#hidden-checkbox:checked ~ .content1 > h1").style.marginTop = "27px";
+  document.getElementById("#hidden-checkbox:checked ~ .content1 > h1").style.marginLeft = "91px";
+  document.getElementById("#hidden-checkbox:checked ~ .content1 > h1").style.fontWeight = "400px";
+  
+  }
+  
+</script>
+
+<!--     function for changing color of healthy and default cards    -->
+
+
+
+
+
+
+
+
+
+<div class="mains">
+  <input type="checkbox" class="hidden-checkbox"  onclick="R1()" id="hidden-checkbox" />
+
+  
+      <main class="main1" id="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun" > 
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+        </div>
+        </section>
+        <section class="content1">
+          
+          <h1 class="A1 o2-value" >29&deg;</h1>
+          <h3>UID : 1</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">20&deg;</h1>
+          <h3>UID : 2 </h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 3</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 4</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">24&deg;</h1>
+          <h3>UID : 5</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1" id="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 6</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 7</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">22&deg;</h1>
+          <h3>UID : 8</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 9</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 10</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+
+      <main class="main1" id="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 11</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 12</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">22&deg;</h1>
+          <h3>UID : 13</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 14</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 15</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+
+      <main class="main1" id="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 16</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">23&deg;</h1>
+          <h3>UID : 17</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 18</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 19</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 20</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+
+      <main class="main1" id="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 21</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 22</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">24&deg;</h1>
+          <h3>UID : 23</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 24</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 25</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+
+      <main class="main1" id="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 26</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 27</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 28</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 29</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 30</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+
+      <main class="main1" id="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 31</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 32</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 33</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 34</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">25&deg;</h1>
+          <h3>UID : 35</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 36</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 37</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 38</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 39</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+      
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">19&deg;</h1>
+          <h3>UID : 40</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 41</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <main class="main1">
+        <section class="sky">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="sun">
+            <div class="Circle3"></div>
+          <div class="Circle2"></div>
+          <div class="Circle1"></div>
+          </div>
+        </section>
+        <section class="content1">
+          <h1 class="A1 o2-value">29&deg;</h1>
+          <h3>UID : 42</h3>
+
+          <div class="details">
+            <div>
+              <p class="value">19&deg;</p>
+              <p class="label1">Temperature</p>
+            </div>
+            <div>
+              <p class="value">29&deg;</p>
+              <p class="label1">Humidity</p>
+            </div>
+            <div>
+              <p class="value">19%</p>
+              <p class="label1">Pressure</p>
+            </div>
+            <div>
+              <p class="value">22%</p>
+              <p class="label1">Battery</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+</div>
+
+
+  </div>
+
+
+</div>
+
+      
+    
+ 
+    
+        </div>
+      </div>
+    
+    
+    
+    
+    
+    
+      <script language="javascript">
+        function check(myForm) { 
+            window.open('index.html')
+            close
+        
+        }
+    </script> 
+    
+    
+    <!-- POP up Window CODE  -->
+    <script>
+    // Add Node
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+        
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+    // See Trend
+            function openForm1() {
+          document.getElementById("myForm1").style.display = "block";
+        }
+        
+        function closeForm1() {
+          document.getElementById("myForm1").style.display = "none";
+        }
+    //Repoet
+        function openForm2() {
+          document.getElementById("myForm2").style.display = "block";
+        }
+        
+        function closeForm2() {
+          document.getElementById("myForm2").style.display = "none";
+        }
+
+        function closeForm3() {
+            document.getElementById("hidden-checkbox").style.display = "block";
+        }
+    </script>
+    <!-- POP Window End Codev-->
+        
+    <!-- Form Display on same scrren start-->
+    
+    
+    <script type="text/javascript">
+      function checkinput1(){
+          var a,b,c,d,e,f;
+           a = document.getElementById("UID").value;
+           b = document.getElementById("Location").value;
+           c = document.getElementById("Sublocation").value;
+           d = document.getElementById("Machine").value;
+           e = document.getElementById("Co2").value;
+           f = document.getElementById("Temparature").value;
+            document.getElementById('op1').innerHTML = a;
+             document.getElementById('op2').innerHTML = b;
+             document.getElementById('op3').innerHTML = c;
+             document.getElementById('op4').innerHTML = d;
+             document.getElementById('op5').innerHTML = e;
+             document.getElementById('op6').innerHTML = f;
+             document.getElementById('output').style.display = 'flex';
+             rock1()
+                       
+      
+      }
+      
+      </script>
+    
+    <!-- Form Display on same scrren End-->
+    
+    
+ 
+
+    <script>
+
+
+
+
+    </script>
+
+    
+    
+    </div>
+ 
+    
+    
+          <!--   All Script  -->
+          <!-- Logout  -->
+          <script language="javascript">
+            function check(myForm) { 
+                window.open('index.html')
+                close
+            
+            }
+            </script>
+    
+            <!-- Logout End -->
+
+
+
+            <script lang="javascript">
+
+              // code for starting differentiate healthy and Faulty cards
+              var main = document.getElementsByClassName('main1');
+              console.log(main.length)
+              for(var i = 0; i< main.length; i++){
+                var o2 = parseInt(main[i].getElementsByClassName('o2-value')[0].innerHTML)
+                if( o2 < 25){
+                   main[i].style.background = "linear-gradient(rgb(254 136 136), rgb(251 0 0), rgb(178 22 22))";
+                   
+                }else{
+                  main[i].style.background = "linear-gradient(rgb(162 255 172), rgb(112 212 47), rgb(1 132 16))";
+                }
+                
+                console.log(main[i])
+              }
+
+
+
+
+
+
+
+               // code for differiantiate small cards
+               function R1(){
+                var ck = document.getElementById('hidden-checkbox');
+              if(ck.checked){
+
+                var main2 = document.getElementsByClassName('Circle1');
+              console.log(main2.length)
+              var main = document.getElementsByClassName('main1');
+              console.log(main.length)
+
+              for(var i = 0; i< main2.length; i++){
+              var o2 = parseInt(main[i].getElementsByClassName('o2-value')[0].innerHTML)
+                if( o2 < 25){
+                   main2[i].style.background = "rgb(215 9 9)";
+                   
+
+                }else{
+                  main2[i].style.background = "rgb(60 162 0)";
+                }
+                console.log(main[i])
+              
+                console.log(main2[i])
+              }
+               
+              
+
+              var main3 = document.getElementsByClassName('Circle2');
+              console.log(main3.length)
+
+              var main = document.getElementsByClassName('main1');
+              console.log(main.length)
+
+              for(var i = 0; i< main3.length; i++){
+                var o2 = parseInt(main[i].getElementsByClassName('o2-value')[0].innerHTML)
+                if( o2 < 25){
+                   main3[i].style.background = "rgb(234 48 48 / 99%)";
+                   
+
+                }else{
+                  main3[i].style.background = "rgb(61 190 32 / 70%)";
+                }
+                console.log(main[i])
+              
+                console.log(main3[i])
+              }
+
+
+              var main4 = document.getElementsByClassName('Circle3');
+              console.log(main4.length)
+              var main = document.getElementsByClassName('main1');
+              console.log(main.length)
+              for(var i = 0; i< main4.length; i++){
+              
+                var o2 = parseInt(main[i].getElementsByClassName('o2-value')[0].innerHTML)
+                if( o2 < 25){
+                   main4[i].style.background = "rgb(255 123 123 / 70%)";
+                   
+
+                }else{
+                  main4[i].style.background = "rgb(81 241 45 / 70%)";
+                }
+                console.log(main[i])
+              
+                console.log(main4[i])
+              }
+
+
+
+                var main = document.getElementsByClassName('main1');
+              console.log(main.length)
+              for(var i = 0; i< main.length; i++){
+                var o2 = parseInt(main[i].getElementsByClassName('o2-value')[0].innerHTML)
+                if( o2 < 25){
+                   main[i].style.background = "#f12222"
+                   }else{
+                  main[i].style.background = "#19d012"
+                }
+                console.log(main[i])
+              }
+              }
+              
+              if(ck.checked == false){
+                var main = document.getElementsByClassName('main1');
+              console.log(main.length)
+              for(var i = 0; i< main.length; i++){
+                var o2 = parseInt(main[i].getElementsByClassName('o2-value')[0].innerHTML)
+                if( o2 < 25){
+                   main[i].style.background = "linear-gradient(rgb(254 136 136), rgb(251 0 0), rgb(178 22 22))";
+                   
+
+                }else{
+                  main[i].style.background = "linear-gradient(rgb(162 255 172), rgb(112 212 47), rgb(1 132 16))"
+                }
+                console.log(main[i])
+              }
+
+              }
+
+              
+
+              }
+
+            
+              
+  //code for differiantiate add node cards
+  function rock1()
+  {
+
+    
+  var main = document.getElementsByClassName('main1');
+  console.log(main.length)
+  for(var i = 0; i< main.length; i++){
+    var o2 = parseInt(main[i].getElementsByClassName('o2-value')[0].innerHTML)
+    if( o2 < 25){
+       main[i].style.background = "linear-gradient(rgb(254 136 136), rgb(251 0 0), rgb(178 22 22))";
+       
+    }else{
+      main[i].style.background = "linear-gradient(rgb(162 255 172), rgb(112 212 47), rgb(1 132 16))";
+    }
+    console.log(main[i])
+  }}
+
+
+
+            </script> 
+
+  
+    
+        
+        
+    </body>
+    </html>
